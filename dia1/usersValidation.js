@@ -14,6 +14,7 @@ const UserSchema = new mongoose.Schema({
             'La contraseña debe tener más de 6 caracteres'],
             select: false      
     },
+    
 })
 
 //esto de abajito son middlewares//
@@ -27,4 +28,6 @@ UserSchema.pre('save', function(next){
     else
     console.log("el login debe ser superior a 10 caracteres")
 })
+
+
 module.exports = mongoose.model("User", UserSchema)
